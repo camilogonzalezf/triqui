@@ -1,5 +1,5 @@
 .header{
-    height: 50px
+    height: 100px
 }
 .section{
     flex-direction: row;
@@ -60,3 +60,4 @@
     border-radius: 20px;
     padding: 10px 10px;
 }
+

@@ -36,17 +36,68 @@ function player_turn(){
     }
 }
 
+function randomGame(){
+    const ranMatch = Math.floor(Math.random()*2) + 1;
+    const playerInit = document.getElementById("playerInit");
+    if (ranMatch == 1){
+        playerInit.innerText = "Inicia Jugador 1";
+    }
+    else{
+        playerInit.innerText = "Inicia Jugador 2";
+    }
+    let cerrar = document.querySelectorAll(".close")[0];
+    let modal = document.querySelectorAll(".modal")[0];
+    let modal_container = document.querySelectorAll(".modal-container")[0];
+    modal_container.style.opacity = "1";
+    modal_container.style.visibility = "visible";
+    modal.classList.toggle("modal-close");
+}
+
+function start(){
+    let modal = document.querySelectorAll(".modal")[0];
+    let modal_container = document.querySelectorAll(".modal-container")[0];
+    modal.classList.toggle("modal-close");
+
+    setTimeout(
+        function(){
+            modal_container.style.opacity = "0";
+            modal_container.style.visibility = "hidden";
+        }
+    ,1000);
+}
+
+window.addEventListener("click", 
+    function (e){
+        console.log(e.target);
+        let modal = document.querySelectorAll(".modal")[0];
+        let modal_container = document.querySelectorAll(".modal-container")[0];
+            if(e.target == modal_container){
+                modal.classList.toggle("modal-close");
+                setTimeout(
+                    function(){
+                        modal_container.style.opacity = "0";
+                        modal_container.style.visibility = "hidden";
+                    }
+                ,1000);
+            }
+        }
+);
+
 function startGame(){
-    document.getElementById("button_active1").style.visibility = 'visible';
-    document.getElementById("button_active2").style.visibility = 'visible';
-    document.getElementById("button_active3").style.visibility = 'visible';
-    document.getElementById("button_active4").style.visibility = 'visible';
-    document.getElementById("button_active5").style.visibility = 'visible';
-    document.getElementById("button_active6").style.visibility = 'visible';
-    document.getElementById("button_active7").style.visibility = 'visible';
-    document.getElementById("button_active8").style.visibility = 'visible';
-    document.getElementById("button_active9").style.visibility = 'visible';
+    document.getElementById("button_active1").style.display = 'block';
+    document.getElementById("button_active2").style.display = 'block';
+    document.getElementById("button_active3").style.display = 'block';
+    document.getElementById("button_active4").style.display = 'block';
+    document.getElementById("button_active5").style.display = 'block';
+    document.getElementById("button_active6").style.display = 'block';
+    document.getElementById("button_active7").style.display = 'block';
+    document.getElementById("button_active8").style.display = 'block';
+    document.getElementById("button_active9").style.display = 'block';
     player_turn();
+    const initButton = document.getElementById("initMatch");
+    initButton.disabled = true;
+    initButton.style.backgroundColor = 'gray'; 
+    initButton.style.cursor = 'default';
 }
 
 /** Fila 1 ************************************************************/

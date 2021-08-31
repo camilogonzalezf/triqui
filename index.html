@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="./tablet.css"
-    media="screen and (min-width: 600px)"
+    media="screen and (min-width: 1023px)"
     >
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -94,12 +94,37 @@
                 <p class="section__div-number-score" id="score_2">0</p>
             </div>
         </aside>
-
     </section>
+
+    <!-- MODAL VENTANA--------------------------------------- -->
+
+    <div class = "modal-container">
+        <div class = "modal modal-close">
+            <img src="./images/win.png" alt="Gana inicio partida">
+            <div class="modal-text">
+                <h1 id="playerInit"></h1>
+            </div>
+            <button class="button_start start_button" type="button" onclick="start()">Comenzar</button>
+        </div>
+    </div>
+
+    <!-- MODAL VENTANA--------------------------------------- -->
     <footer class="footer">
-        <button type="button" onclick="randomGame()" class="button_start">Sortear Partida</button>
-        <button type="button" onclick="startGame()" class="button_start">Iniciar Partida</button>
-        <button type="button" onclick="cleanTable()" class="button_start">Limpiar Tablero</button>
+
+        <button type="button" onclick="randomGame()" 
+            class="button_start" id="ranGame" >
+            Sortear Partida
+        </button>
+        
+        <button type="button" onclick="startGame()" 
+            class="button_start" id="initMatch" disabled>
+            Iniciar Partida
+        </button>
+
+        <button type="button" onclick="cleanTable()" 
+            class="button_start" id="cleanButton" disabled>
+            Limpiar Tablero
+         </button>
     </footer>
     <script src="./functions.js"></script>
 </body>
