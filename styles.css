@@ -52,7 +52,7 @@ body{
 
 .section__main{
     width: 100%;
-    height: 70%;
+    height: 60%;
     border: 6px solid white;
     border-radius: 20px;
     padding: 10px 10px;
@@ -67,7 +67,7 @@ body{
 
 .section__main-table td{
     text-align: center;
-    font-size: 6rem;
+    font-size: 3rem;
     width: 33.3333%;
 }
 .section__main-table tr{

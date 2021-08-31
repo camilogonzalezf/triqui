@@ -1,3 +1,6 @@
+.header{
+    height: 50px
+}
 .section{
     flex-direction: row;
 }
