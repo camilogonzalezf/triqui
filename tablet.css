@@ -1,8 +1,13 @@
 .header{
-    height: 100px
+    height: 100px;
+}
+
+.header__h1{
+    font-size: 4rem;
 }
 .section{
     flex-direction: row;
+    height: calc(100vh - 200px);
 }
 
 .section__div-mobile{
@@ -60,5 +65,9 @@
     border: 6px solid white;
     border-radius: 20px;
     padding: 10px 10px;
+}
+
+.footer {
+    height: 100px;
 }
 
