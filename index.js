@@ -10,14 +10,16 @@ var player2;
 
 var score1 = 0;
 var score2 = 0;
+var contador_selecciones = 0; 
+
 function winPlayer1(){
     const img_player1 = document.getElementById("img_player1");
     img_player1.src="./images/win.png";
-    img_player1.style.width = '130%';
+    img_player1.style.width = '80%';
     const img_player2 = document.getElementById("img_player2");
     img_player2.src="./images/lose.png";
     img_player2.style.width = '80%';
-    document.getElementById("player1_title").style.fontSize = '30px'; 
+    document.getElementById("player1_title").style.fontSize = '18px'; 
     document.getElementById("player2_title").style.fontSize = '18px';
     score1 +=1;
     const score_1 = document.getElementById("score_1");
@@ -33,6 +35,7 @@ function winPlayer1(){
         let string = "button_active"+i;
         document.getElementById(string).disabled = true;
     }
+    contador_selecciones = 0;
 }
 
 function winPlayer2(){
@@ -41,9 +44,9 @@ function winPlayer2(){
     img_player1.style.width = '80%';
     const img_player2 = document.getElementById("img_player2");
     img_player2.src="./images/win.png";
-    img_player2.style.width = '130%';
+    img_player2.style.width = '80%';
     document.getElementById("player1_title").style.fontSize = '18px'; 
-    document.getElementById("player2_title").style.fontSize = '30px';
+    document.getElementById("player2_title").style.fontSize = '18px';
     score2 +=1;
     const score_2 = document.getElementById("score_2");
     const score_2m = document.getElementById("score_2m");
@@ -58,10 +61,14 @@ function winPlayer2(){
         let string = "button_active"+i;
         document.getElementById(string).disabled = true;
     }
+    contador_selecciones = 0;
 }
 
 
 function validar(){
+
+    contador_selecciones+=1;
+
     let simbolo; 
 
     if(player1){
@@ -186,6 +193,15 @@ function validar(){
         else {
             return false; 
         }
+    }
+    console.log(contador_selecciones);
+    if(contador_selecciones===9){
+        contador_selecciones = 0;
+        const nextButton = document.getElementById("nextButton");
+        nextButton.disabled = false;
+        nextButton.style.backgroundColor = "#f5ce22";
+        nextButton.style.cursor = "pointer";
+        return false;
     }
 }
 
