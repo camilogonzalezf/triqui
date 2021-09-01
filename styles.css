@@ -82,7 +82,9 @@ body{
 #c1_1 , #c1_2, #c1_3, #c2_1 , #c2_2, #c2_3  {
     border-bottom: 10px solid white;
 }
-
+.button_sel{
+    display: block;
+}
 .button_select{
     height: 90%;
     width: 90%;
@@ -91,6 +93,7 @@ body{
     border: none;
     cursor: pointer;
     display: none;
+    font-size: 4.5rem;
 }
 
 .section__div-mobile{
@@ -105,7 +108,7 @@ body{
     font-size: 1.8rem;
 }
 
-#score_1 , #score_2{
+#score_1 , #score_2 , #score_1m, #score_2m{
     font-size: 3rem;
 }
 
@@ -146,9 +149,7 @@ body{
 
 }
 
-
-
-#initMatch , #cleanButton {
+#nextButton, #cleanButton {
     background-color: grey;
     cursor: default;
 }

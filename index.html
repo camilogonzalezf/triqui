@@ -41,36 +41,36 @@
             <table class="section__main-table">
                 <tr>
                     <td id="c1_1">
-                        <button class="button_select" type="button" onclick="active_c_11()" id="button_active1"></button>
+                        <button class="button_sel button_select" type="button" onclick="active_c_11()" id="button_active1"></button>
                     </td>
                     <td id="c1_2">
-                        <button class="button_select" type="button" onclick="active_c_12()" id="button_active2"></button>
+                        <button class="button_sel button_select" type="button" onclick="active_c_12()" id="button_active2"></button>
                     </td>
 
                     <td id="c1_3">
-                        <button class="button_select" type="button" onclick="active_c_13()" id="button_active3"></button>
+                        <button class="button_sel button_select" type="button" onclick="active_c_13()" id="button_active3"></button>
                     </td>
                 </tr>
                 <tr>
                     <td id="c2_1">
-                        <button class="button_select" type="button" onclick="active_c_21()" id="button_active4"></button>
+                        <button class="button_sel button_select" type="button" onclick="active_c_21()" id="button_active4"></button>
                     </td>
                     <td id="c2_2">
-                        <button class="button_select" type="button" onclick="active_c_22()" id="button_active5"></button>
+                        <button class="button_sel button_select" type="button" onclick="active_c_22()" id="button_active5"></button>
                     </td>
                     <td id="c2_3">
-                        <button class="button_select" type="button" onclick="active_c_23()" id="button_active6"></button>
+                        <button class="button_sel button_select" type="button" onclick="active_c_23()" id="button_active6"></button>
                     </td>
                 </tr>
                 <tr>
                     <td id="c3_1">
-                        <button class="button_select" type="button" onclick="active_c_31()" id="button_active7"></button>
+                        <button class="button_sel button_select" type="button" onclick="active_c_31()" id="button_active7"></button>
                     </td>
                     <td id="c3_2">
-                        <button class="button_select" type="button" onclick="active_c_32()" id="button_active8"></button>
+                        <button class="button_sel button_select" type="button" onclick="active_c_32()" id="button_active8"></button>
                     </td>
                     <td id="c3_3">
-                        <button class="button_select" type="button" onclick="active_c_33()" id="button_active9"></button>
+                        <button class="button_sel button_select" type="button" onclick="active_c_33()" id="button_active9"></button>
                     </td>
                 </tr>
             </table>
@@ -79,11 +79,11 @@
         <div class="section__div-mobile">
             <div class="player-mobile">
                 <p class="player-mobile-p">Jugador 1</p>
-                <p id="score_1">0</p>
+                <p id="score_1m">0</p>
             </div>
             <div class="player-mobile">
                 <p class="player-mobile-p">Jugador 2</p>
-                <p id="score_2">0</p>
+                <p id="score_2m">0</p>
             </div>
         </div>
 
@@ -113,17 +113,24 @@
 
     <!-- MODAL VENTANA--------------------------------------- -->
     <footer class="footer">
-
         <button type="button" onclick="randomGame()" 
-            class="button_start" id="ranGame" >
+            class="button_start" id="ranGame">
             Sortear Partida
         </button>
-    
-        <button type="button" onclick="cleanTable()" 
+
+        <button type="button" onclick="nextGame()" 
+            class="button_start" id="nextButton" disabled>
+            Siguiente Juego
+        </button>
+
+        <button type="button" onclick="resetButton()" 
             class="button_start" id="cleanButton" disabled>
             Reiniciar
          </button>
+
+
+
     </footer>
-    <script src="./functions.js"></script>
+    <script src="./index.js"></script>
 </body>
 </html>
