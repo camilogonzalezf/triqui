@@ -4,8 +4,7 @@ let matrix = [
             ['0','0','0']
             ];
 
-let player1 = true;
-let player2 = false; 
+
 
 function update_matrix(row,col){
     matrix[row][col] = player1?"x":"o";
@@ -36,14 +35,31 @@ function player_turn(){
     }
 }
 
+function startGame(){
+    document.getElementById("button_active1").style.display = 'block';
+    document.getElementById("button_active2").style.display = 'block';
+    document.getElementById("button_active3").style.display = 'block';
+    document.getElementById("button_active4").style.display = 'block';
+    document.getElementById("button_active5").style.display = 'block';
+    document.getElementById("button_active6").style.display = 'block';
+    document.getElementById("button_active7").style.display = 'block';
+    document.getElementById("button_active8").style.display = 'block';
+    document.getElementById("button_active9").style.display = 'block';
+    player_turn();
+}
+
 function randomGame(){
     const ranMatch = Math.floor(Math.random()*2) + 1;
     const playerInit = document.getElementById("playerInit");
     if (ranMatch == 1){
         playerInit.innerText = "Inicia Jugador 1";
+            player1 = true;
+            player2 = false; 
     }
     else{
         playerInit.innerText = "Inicia Jugador 2";
+            player1 = false;
+            player2 = true; 
     }
     let cerrar = document.querySelectorAll(".close")[0];
     let modal = document.querySelectorAll(".modal")[0];
@@ -51,6 +67,16 @@ function randomGame(){
     modal_container.style.opacity = "1";
     modal_container.style.visibility = "visible";
     modal.classList.toggle("modal-close");
+    startGame();
+    const button_ranGame = document.getElementById("ranGame");
+    button_ranGame.disable = true;
+    button_ranGame.style.backgroundColor = "gray";
+    button_ranGame.style.cursor = "default";
+    const button_reset = document.getElementById("cleanButton");
+    button_reset.disable = false;
+    button_reset.style.backgroundColor = "#f5ce22";
+    button_reset.style.cursor = "pointer";
+    
 }
 
 function start(){
@@ -81,24 +107,10 @@ window.addEventListener("click",
                 ,1000);
             }
         }
+
 );
 
-function startGame(){
-    document.getElementById("button_active1").style.display = 'block';
-    document.getElementById("button_active2").style.display = 'block';
-    document.getElementById("button_active3").style.display = 'block';
-    document.getElementById("button_active4").style.display = 'block';
-    document.getElementById("button_active5").style.display = 'block';
-    document.getElementById("button_active6").style.display = 'block';
-    document.getElementById("button_active7").style.display = 'block';
-    document.getElementById("button_active8").style.display = 'block';
-    document.getElementById("button_active9").style.display = 'block';
-    player_turn();
-    const initButton = document.getElementById("initMatch");
-    initButton.disabled = true;
-    initButton.style.backgroundColor = 'gray'; 
-    initButton.style.cursor = 'default';
-}
+
 
 /** Fila 1 ************************************************************/
 function active_c_11(){
